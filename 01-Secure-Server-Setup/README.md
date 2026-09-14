@@ -67,7 +67,9 @@ Creates a separate login account for an employee or administrator instead of all
 Step 2: Create a Group and Add the User
 
 sudo groupadd developers
+
 sudo usermod -aG developers devuser
+
 groups devuser
 
 Commands:
@@ -85,8 +87,11 @@ Role-based access can be managed through groups. Instead of assigning permission
 Step 3: Create a Folder and Set Permissions
 
 sudo mkdir /project-data
+
 sudo chown devuser:developers /project-data
+
 sudo chmod 770 /project-data
+
 ls -ld /project-data
 
 Commands:
@@ -113,8 +118,11 @@ Others → No Access
 Step 4: Install and Start the SSH Server
 
 sudo apt update
+
 sudo apt install openssh-server -y
+
 sudo systemctl start ssh
+
 sudo systemctl enable ssh
 
 Commands:
@@ -169,7 +177,9 @@ Reduces the risk of unauthorized access and password-based brute-force attacks o
 Step 6: Enable the Firewall (UFW)
 
 sudo ufw allow ssh
+
 sudo ufw enable
+
 sudo ufw status
 
 Commands:
