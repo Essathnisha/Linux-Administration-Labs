@@ -48,6 +48,7 @@ In this project, I monitored Linux logs, analyzed log disk usage, created a cust
 
  bash
 sudo tail -20 /var/log/syslog
+
 Purpose:
 Displays the latest 20 lines of the system log to monitor recent system activity, errors, warnings, and events.
 
@@ -105,7 +106,9 @@ Reviews the default Linux log rotation configuration and helps understand how sy
 5️⃣ Create a Test Application Log
 
 sudo mkdir -p /var/log/myapp
+
 sudo touch /var/log/myapp/app.log
+
 echo "Test log entry" | sudo tee -a /var/log/myapp/app.log
 
 Purpose:
@@ -162,6 +165,7 @@ Tests the configuration in debug mode without actually performing log rotation.
 8️⃣ Force Log Rotation & Verify
 
 sudo logrotate -f /etc/logrotate.d/myapp
+
 ls -la /var/log/myapp/
 
 Purpose:
@@ -182,18 +186,25 @@ The .gz file indicates that the rotated log has been compressed.
 🔄 Log Rotation Workflow
 
 Application
+
      ↓
   app.log
+  
      ↓
  Logrotate
+ 
      ↓
 Daily Rotation
+
      ↓
 Compression
+
      ↓
 Keep 7 Copies
+
      ↓
 Remove Older Logs
+
      ↓
 Controlled Disk Usage
 
@@ -203,13 +214,21 @@ Controlled Disk Usage
 🔒 Key Features
 
 ✅ System log monitoring
+
 ✅ SSH service log monitoring
+
 ✅ Disk usage monitoring
+
 ✅ Custom logrotate configuration
+
 ✅ Application-specific log management
+
 ✅ Automatic log compression
+
 ✅ Log retention management
+
 ✅ Safe dry-run testing
+
 ✅ Log rotation verification
 
 
